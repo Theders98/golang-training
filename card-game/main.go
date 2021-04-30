@@ -21,15 +21,15 @@ func newSuit() string {
 }
 
 func generateDeck() []string {
-	//Es necesario para actualizar el numero aleatorio, sino será el mismo en cada ejecución
+	//Actualiza el numero aleatorio, sino será el mismo en cada ejecución
 	rand.Seed(time.Now().UnixNano())
 
-	//Listas vacía y llena de strings
+	//Inicializacion de slice vacío
 	cards := []string{}
 
 	for i := 0; i <= 5; i++ {
 
-		//Genero numero aleatorio para asignarselo a la slice de retorno
+		//Genera numero aleatorio para asignarselo a la slice de retorno
 		cardNumber := rand.Intn(13)
 		cards = append(cards, strconv.Itoa(cardNumber)+" Of "+newSuit())
 	}
